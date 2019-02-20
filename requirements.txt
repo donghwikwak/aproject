@@ -1,0 +1,8 @@
+django~=2.1.0
+gunicorn
+requests
+beautifulsoup4
+pillow
+django-debug-toolbar
+
+django-heroku

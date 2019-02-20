@@ -3,7 +3,7 @@ import os
 import sys
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aproject.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aproject.settings') # 기본 Settings, 여러개 만들 수 있다.
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
