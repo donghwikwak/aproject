@@ -1,0 +1,37 @@
+{% extends "shop/layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="card-group">
+            {% for shop in shop_list %}
+                <div class="col-sm-4 mb-3">
+                    <div class="card">
+                        <img src="https://mblogthumb-phinf.pstatic.net/20150701_201/whdrnr95_1435721605440cJvNE_JPEG/DSC_0035.jpg?type=w2" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/shop/{{ shop.id }}/">
+                                    #{{ shop.id }}. {{ shop.name }}
+                                </a>
+                            </h5>
+                            {% if shop.address %}
+                                <p class="card-text">
+                                    {{ shop.address }}
+                                </p>
+                            {% endif %}
+                            {% if shop.desc %}
+                                <p class="card-text">
+                                    {{ shop.desc }}
+                                </p>
+                            {% endif %}
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{ shop.created_at }}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
