@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
@@ -36,7 +37,7 @@ index = PostListView.as_view()
 shop_detail = DetailView.as_view(model=Shop)
 
 
-
+@login_required
 def shop_new(request):
     form_cls = ShopForm
 
@@ -55,7 +56,7 @@ def shop_new(request):
 shop_new_cbv = CreateView.as_view(
     model=Shop, form_class=ShopForm)
 
-
+@login_required
 def shop_edit(request, pk):
     # try:
     #     shop = Shop.objects.get(pk=pk)
@@ -83,7 +84,7 @@ def shop_edit(request, pk):
 shop_edit_cbv = UpdateView.as_view(
     model=Shop, form_class=ShopForm)
 
-
+@login_required
 def shop_delete(request, pk):
     shop = get_object_or_404(Shop, pk=pk)
 
