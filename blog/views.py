@@ -1,3 +1,5 @@
+# This file is opened by Donghwi Kwak
+
 
 from django.http import HttpResponse
 from django.shortcuts import render
